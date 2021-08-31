@@ -1,0 +1,173 @@
+body {
+    background-color: #B9CDDA;
+    background-image: url("https://i.ytimg.com/vi/-MKapbz0GIo/maxresdefault.jpg");
+}
+
+table {
+    text-align:center;
+    background: rgba(76, 175, 80, 0);
+}
+
+form {
+    margin-top: 5%;
+}
+
+.error {
+    color: red;
+}
+
+.view td{
+    border:1px dotted #253031;
+}
+
+.view tr:nth-child(even) {
+    background: #CCC;
+}
+
+.view tr:nth-child(odd) {
+    background: #FFF;
+}
+
+.view tr:nth-child(1) {
+    background-color: rgba(0,0,0,0);
+}
+
+.navbar {
+    background: rgba(0, 47, 60,  .90);
+}
+
+.widesubmit {
+    width: 50%;
+}
+
+input[type="button"], input[type="submit"] {
+    color: white;
+    background-color: deepskyblue;
+    border: none;
+}
+
+#main {
+    width: 100%;
+    background: rgba(210, 226, 245, .95);
+    border-radius: 5px;
+}
+
+.container{
+    padding:0;
+    width: 100%;
+}
+
+.center {
+    text-align: center;
+    padding-top: 5px;
+    display:block;
+    width: 100%;
+}
+
+.view {
+    width: 100%;
+}
+
+.links {
+    display: inline-block;
+    color: deepskyblue;
+    padding: 2px;
+}
+
+.links:hover {
+    color: lightskyblue;
+}
+
+.links_selected {
+    color: gray;
+}
+
+.links_selected:hover {
+    color: gray;
+    text-decoration:none;
+}
+
+.link_slash {
+    color: gray;
+}
+
+.link_slash:hover {
+    color: gray;
+    text-decoration:none;
+}
+
+#logo {
+    font-weight: bold;
+    color: #B9CDDA;
+    border-radius: 5px;
+    padding: 5px;
+    border-color: #B9CDDA;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#logo:hover {
+    color: white;
+    background-color: #B9CDDA;
+}
+
+#header_option {
+    color: white;
+    border-radius: 5px;
+}
+
+#header_option:hover {
+    color: #253031;
+    background-color: #B9CDDA;
+}
+
+.dropdown-item:hover {
+    background-color: #B9CDDA;
+}
+
+#foot_box:before {
+    content: " ";
+    display: block;
+    border-bottom: 1px solid black;
+}
+
+#fill_space {
+    padding: 10%;
+}
+
+#foot {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 47, 60,  .95);
+    color: white;
+    text-align: center;
+    padding: 0px;
+}
+
+.fa {
+    color: lightslategray;
+    text-decoration: none;
+}
+
+.fa:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-copyright {
+    color: white;
+}
+
+#website_link {
+    color: lightslategray;
+    text-decoration: underline;
+}
+
+#website_link:hover {
+    color: white;
+}
+
+#del_button{
+    background-color: red;
+}

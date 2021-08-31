@@ -1,0 +1,31 @@
+List of commands:
+
+CREATEUSER - Create a user
+EDITUSER - Edit a user's information
+DELETEUSER <USERNAME> - Delete a user's information
+ADDCLASS - Add a class to the schedule
+EDITSCHEDULE - For a TA to enter their class schedule
+ASSIGNTA - Assign TAs to Lab/Discussion sections
+ASSIGNINSTRUCTOR - Assign instructors to Lecture sections
+RESET - Reset system for new semester
+LOGIN - Login to system
+LOGOUT - Logout of system
+EDITINFO - Edit contact information
+DISPLAYASSIGNMENTS - Display class assignments
+DISPLAYCLASSES - Display all classes
+DISPLAYCONFLICTS - Display schedule conflicts
+SETPREFERENCES - For a TA to set their preferences
+VIEWSCHEDULE - Allows TAs to see their schedule
+VIEWASSIGNMENT <USERNAME> - allows users to view their or other users assignments, if no username is entered displays
+                            current user's assignments
+SETFINALDATE <date> - allows admin to set final tate for tas to accept or reject an assignment
+VIEWFINALDATE - allows any user to view the final dayte for accepting/rejecting assignments
+ADDQUAL - TA adds qualifications
+VIEWQUAL <USERNAME> - Admin/Instructor view TA's qualification (TA can only view his/her own qualifications)
+EDITINFO <Option> - Add or edit the personal information
+                    Options include: phone, email, mobile ... (May include office hours)
+GETCLASSASSIGNMENTS <class> - view ta assignments for a class, or all to view for all classes
+DISPLAYPENDING - Admin views TA assignments pending approval
+REMOVEENROLL <class> - TA removes a class from their schedule
+CHANGEPASSWORD - changes password
+RESETPASSWORD - To Reset a User's Password to Default

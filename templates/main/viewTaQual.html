@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    <h3>List of TA's and their qualifications:</h3>
+    <h4> ---------------------------------------- </h4>
+    {% for ta in listOfTAs %}
+        <h5> {{ ta.first_name }} {{ ta.last_name }} </h5>
+        <h6> {{ ta.qualifications }} </h6>
+        <h5>Preferences</h5>
+        <ol>
+            <li>{{ ta.pref_1 }}</li>
+            <li>{{ ta.pref_2 }}</li>
+            <li>{{ ta.pref_3 }}</li>
+        </ol>
+        <h4> ---------------------------------------- </h4>
+    {% endfor %}
+{% endblock content %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<p id="fill_space"> </p>
+
+<form class="center" method="post">
+    <p class="error">Are you sure you want to reset the system?</p>
+    {% csrf_token %}
+    <input id="del_button" type="submit" name = "Yes" value="Yes">
+    <input type="submit" name = "No" value="No">
+</form>
+
+{% endblock content %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            {% if "ADMIN" in privilege %}
+                <meta http-equiv="refresh" content="0; url = /courses" />
+            {% endif %}
+
+            {% if "TA" in privilege %}
+                <meta http-equiv="refresh" content="0; url = /courses" />
+            {% endif %}
+
+            {% if "INSTRUCTOR" in privilege %}
+                <meta http-equiv="refresh" content="0; url = /courses" />
+            {% endif %}
+        </div>
+        <div class="col-md-4">
+            <div class="content-section">
+                <h4>Commands List:</h4>
+                <p class='text-muted'>Based on your privileges.
+                <ul class="list-group">
+                    {% for url, label in url_dict.items %}
+                        <h5>
+                            <a href="{{ url }}"> {{ label }} </a>
+                        </h5>
+                    {% endfor %}
+                </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Courses</h2>
+    <div class ="center">
+        <table class = "view" align="center">
+            <tr>
+                <th>Course Name&emsp;</th>
+                <th>&emsp;Course Number&emsp;</th>
+                <th>&emsp;Description&emsp;</th>
+                <th>&emsp;&emsp;&emsp;Instructor</th>
+            </tr>
+            {% for course in courses %}
+                <tr>
+                    <td>{{ course.name }}</td>
+                    <td>&emsp;{{ course.lecture_num }}</td>
+                    <td>&emsp;{{ course.description }}</td>
+                    <td>&emsp;&emsp;&emsp;{{ course.instructor }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{#    <a href="/main/index.html">Home</a>#}
+{% endblock content %}

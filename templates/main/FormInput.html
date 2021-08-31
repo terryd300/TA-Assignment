@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="center">
+        <p class = "error">{{ message }}</p>
+        <form class="center" method="post">
+            {% csrf_token %}
+            <table align="center">
+                {{ form.as_table }}
+            </table>
+            <br/>
+            <input class ="widesubmit" type="submit" value="Submit">
+        </form>
+    </div>
+    {% endblock content %}

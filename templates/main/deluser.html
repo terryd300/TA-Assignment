@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Users in System</h2>
+<span style="font-size: small; ">
+    <table class="view" align="center">
+        <tr>
+            <th>Username&emsp;</th>
+            <th>Account Type&ensp;</th>
+            <th>First Name&emsp;</th>
+            <th>Last Name&emsp;</th>
+            <th>Email&emsp;</th>
+            <th>&ensp;Phone&ensp;</th>
+            <th>Address</th>
+            <th>Delete</th>
+        </tr>
+        {% for user in users %}
+        {% if 'ADMIN' not in user.privilege_level %}
+        <tr>
+            <td>{{ user.user_name }}</td>
+            <td>{{ user.privilege_level }}</td>
+            <td>{{ user.first_name }}</td>
+            <td>{{ user.last_name }}</td>
+            <td>{{ user.email }}</td>
+            <td>&ensp;{{ user.phone }}</td>
+            <td>{{ user.address }}</td>
+            <td>
+                <form class="center" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="username" value={{user.user_name}} />
+                    <input id="del_button" type="submit" value="Delete">
+                </form>
+            </td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+    </table>
+</span>
+{#    <a href="/main/index.html">Home</a>#}
+{% endblock content %}

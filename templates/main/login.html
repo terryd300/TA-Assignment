@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+  <p id="fill_space"> </p>
+  <form class = "center" method="post">
+      <p class = "error">{{ message }}</p>
+      {% csrf_token %}
+      {{ loginform }}
+      <input type="submit" value="Submit">
+  </form>
+{% endblock content %}

@@ -1,0 +1,149 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html>
+</html>
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Original CSS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/sprint3.css' %}">
+
+    <!-- Title Logic -->
+    {% if title %}
+    <title>Sprint 3 - {{ title }}</title>
+    {% else %}
+    <title>Sprint 3</title>
+    {% endif %}
+
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+            <div class="container">
+                <a id="logo" class="navbar-brand mr-4" href="{% url 'home' %}">WLK</a>
+
+                {% if username %}
+                <div class="collapse navbar-collapse" id="navbarToggle">
+                    <div class="navbar-nav mr-auto">
+                        <a id="header_option" class="nav-item nav-link" href='#'>About</a>
+
+                        <li class="nav-item dropdown">
+                            <a id="header_option" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Commands</a>
+                            <div class="dropdown-menu">
+                                {% for url, label in url_dict.items %}
+                                {% if '/contactinfo' not in url and '/passwordchange' not in url and '/deluser' not in url and '/reset' not in url%}
+                                <h6>
+                                    <a class="dropdown-item" href="{{ url }}"> {{ label }} </a>
+                                </h6>
+                                {% endif %}
+                                {% endfor %}
+                            </div>
+                        </li>
+
+
+                        {% if 'Admin' in username %}
+                        <li class="nav-item dropdown">
+                            <a id="header_option" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Delete</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/deluser">Delete User</a>
+                                <a class="dropdown-item" href="/reset">Reset System</a>
+                            </div>
+                        </li>
+                        {% endif %}
+
+
+                        <li class="nav-item dropdown">
+                            <a id="header_option" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{username}}</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/contactinfo">Contact Info</a>
+                                <a class="dropdown-item" href="/passwordchange">Change Password</a>
+                            </div>
+                        </li>
+
+                    </div>
+
+                    <!-- Navbar Right Side -->
+                    <a id="header_option" class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+
+                </div>
+                {% endif %}
+            </div>
+        </nav>
+    </header>
+
+
+    <main role="main" class="container">
+        <div id="main" class="center">
+            {% for url, label in link_dict.items %}
+                {% if url in request.path %}
+                    <a class=" links links_selected col-md-3" href="{{ url }}"> {{ label }} </a>
+                {% else %}
+                    <a class=" links col-md-3" href="{{ url }}"> {{ label }} </a>
+                {% endif %}
+            {% if not forloop.last %} <h5 class="links link_slash">/</h5> {% endif %}
+            {% endfor %}
+
+            {% block content %}{% endblock %}
+            <p id="fill_space"> </p>
+            <p id="fill_space"> </p>
+        </div>
+    </main>
+
+
+
+    <!-- Footer -->
+    <footer id="foot" class="page-footer font-small unique-color-dark pt-4">
+
+        <!-- Footer Elements -->
+        <div class="container">
+
+            <!-- Social buttons -->
+            <div class="row">
+
+                <div class="col-sm-3"></div>
+
+                <a href="#" class="col-sm-2 fa fa-facebook"></a>
+
+                <a href="#" class="col-sm-2 fa fa-instagram"></a>
+
+                <a href="#" class="col-sm-2 fa fa-twitter"></a>
+
+            </div>
+            <!-- Social buttons -->
+
+        </div>
+        <!-- Footer Elements -->
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">
+            We Like Krique?© 2019:
+            <a id="website_link" href="home/"> WeLikeKrique.com</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js" integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Users in System</h2>
+    <span style="font-size: small; ">
+        <table class = "view" align="center">
+            <tr>
+                {% if username == "Admin" %}
+                    <th>Username&emsp;</th>
+                {% endif %}
+                <th>Account Type&ensp;</th>
+                <th>First Name&emsp;</th>
+                <th>Last Name&emsp;</th>
+                <th>Email&emsp;</th>
+                {% if username == "Admin" %}
+                    <th>&ensp;Phone&ensp;</th>
+                    <th>Address</th>
+                {% endif %}
+            </tr>
+            {% for user in users %}
+                <tr>
+                    {% if username == "Admin" %}
+                        <td>{{ user.user_name }}</td>
+                    {% endif %}
+                    <td>{{ user.privilege_level }}</td>
+                    <td>{{ user.first_name }}</td>
+                    <td>{{ user.last_name }}</td>
+                    <td>{{ user.email }}</td>
+                    {% if username == "Admin" %}
+                        <td>&ensp;{{ user.phone }}</td>
+                        <td>{{ user.address }}</td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        </table>
+    </span>
+{#    <a href="/main/index.html">Home</a>#}
+{% endblock content %}

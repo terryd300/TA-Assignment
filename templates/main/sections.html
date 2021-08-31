@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Sections for This Semester</h2>
+<div class="center">
+    <table class="view" align="center">
+        <tr>
+            <th>Course</th>
+            <th>Section<br>Number</th>
+            <th>Section<br>Type</th>
+            <th>Days</th>
+            <th>Start<br>Time</th>
+            <th>End<br>Time</th>
+            <th>TA</th>
+        </tr>
+        {% for section in sections %}
+        <tr>
+            <td>{{ section.course }}</td>
+            <td>{{ section.number }}</td>
+            <td>{{ section.type }}</td>
+            <td>{{ section.days }}</td>
+            <td>{{ section.start_time }}</td>
+            <td>{{ section.end_time }}</td>
+            <td>{{ section.ta }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{#    <a href="/main/index.html">Home</a>#}
+{% endblock content %}

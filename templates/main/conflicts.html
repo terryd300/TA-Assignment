@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+      <h2>TA Schedule Conflicts</h2>
+<div class="center">
+    <table class="view" align="center">
+        <tr>
+            <th>Course 1</th>
+            <th>Section<br>Number</th>
+            <th>Section<br>Type</th>
+            <th>Days</th>
+            <th>Start<br>Time</th>
+            <th>End<br>Time</th>
+            <th>TA</th>
+            <th>Course 2</th>
+            <th>Section<br>Number</th>
+            <th>Section<br>Type</th>
+            <th>Days</th>
+            <th>Start<br>Time</th>
+            <th>End<br>Time</th>
+            <th>TA</th>
+        </tr>
+        {% for conflict in conflicts %}
+        <tr>
+            {% for section in conflict %}
+            <td>{{ section.course }}</td>
+            <td>{{ section.number }}</td>
+            <td>{{ section.type }}</td>
+            <td>{{ section.days }}</td>
+            <td>{{ section.start_time }}</td>
+            <td>{{ section.end_time }}</td>
+            <td>{{ section.ta }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{#    <a href="/main/index.html">Home</a>#}
+{% endblock content %}
